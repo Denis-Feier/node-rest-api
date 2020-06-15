@@ -12,8 +12,8 @@ const productRoutes = require('./routes/product');
 const router = express.Router();
 const MONGO_ATLES_URL = process.env.MONGO_ATLES_URL;
 const accessLoggerStream = fs.createWriteStream(
-    path.join(__dirname, 'assets', 'loges.log'),
-    {flags: '+a'});
+    path.join(__dirname, 'loges.log'),
+    {flags: 'a+'});
 
 mongoose.connect(MONGO_ATLES_URL, {
     useNewUrlParser: true,
