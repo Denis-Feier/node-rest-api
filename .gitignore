@@ -1,4 +1,4 @@
 .env
 node_modules/
 my-uploads/
-./loges.log
+loges.log
