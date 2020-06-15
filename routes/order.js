@@ -1,16 +1,16 @@
 const express = require('express');
+const checkAuth = require('../middlewares/check-auth');
+
+const orderController = require('../controller/order');
 
 const router = express.Router();
 
-router.get('/', (req, res, next) => {
-    res.json({
-        message: 'Order Get works'
-    })
-});
+router.get('/', checkAuth, orderController.getAllOrders);
 
-router.post('/', (req, res, next) => {
-    const body = req.body;
-    res.json(body);
-});
+router.get('/:Id', orderController.getOrderByID);
+
+router.post('/', checkAuth, orderController.postOrder);
+
+router.delete('/:Id', orderController.deleteOrderByID);
 
 module.exports = router;

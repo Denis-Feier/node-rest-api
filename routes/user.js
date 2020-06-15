@@ -1,23 +1,15 @@
 const express = require('express');
 
+const userController = require('../controller/user');
+
 const router = express.Router();
 
-router.get('/', (req, res, next) => {
-    res.json({
-        message: `User Get works`
-    })
-});
+router.post('/signup', userController.signUp);
 
-router.get('/all', (req, res, next) => {
-    res.json({
-        message: 'User all Get works'
-    })
-});
+router.delete('/:userId', userController.killUserById);
 
+router.get('/', userController.getAllUser);
 
-router.post('/', (req, res, next) => {
-    const body = req.body;
-    res.json(body);
-});
+router.post('/login', userController.login);
 
 module.exports = router;
