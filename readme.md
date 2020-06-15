@@ -6,7 +6,8 @@ npm install
 npm start # to run the app
 ```
 
-Also, you need to have a .env file in the root dir for all the environment variables:
+Also, you need to have a .env file in the root dir for all the environment variables 
+and a ./my-uploads dir for the images:
 
 ```
 PORT=your port # you can leave this by default is 3000
